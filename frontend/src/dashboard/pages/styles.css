@@ -1,0 +1,19 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  ._loading_overlay_content {
+    top: 45%;
+    left: 35%;
+    position: fixed;
+    color:#a51a1d;
+  }
+  .css-50etie svg circle{
+    stroke: #a51a1d;
+    
+  }
+  .css-50etie svg {
+    left: 210px;
+  }
+  

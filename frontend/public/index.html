@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="https://bfcpublications.com/assets/images/loader/bfc-publications-icon.webp" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/style.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/main.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/skins/default.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- <link href="./assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- <link rel="stylesheet" href="./assets/fonts/font-awesome/css/font-awesome.min.css" > -->
+  <!-- <link rel="stylesheet" href="./assets/fonts/flaticon/font/flaticon.css" > -->
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPoppins:400,500,700,800,900%7CRoboto:100,300,400,400i,500,700">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"> -->
+
+  <title>Prodigy Pro</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+</body>
+<!-- <script src="./assets/js/bootstrap.min.js"></script> -->
+<script src="%PUBLIC_URL%/assets/js/jquery.js"></script>
+<script src="%PUBLIC_URL%/assets/js/popper.min.js"></script>
+
+<!-- <script>
+$(document).ready(function() {
+    $("#btnFetch").click(function() {
+      // disable button
+      $(this).prop("disabled", true);
+      // add spinner to button
+      $(this).html(
+        `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`
+      );
+    });
+});
+  </script> -->
+
+<script>
+  $(document).ready(function () {
+
+    var current_fs, next_fs, previous_fs; //fieldsets
+    var opacity;
+    var current = 1;
+    var steps = $("fieldset").length;
+
+    setProgressBar(current);
+
+    $(".next").click(function () {
+
+      current_fs = $(this).parent();
+      next_fs = $(this).parent().next();
+      // alert(next_fs);
+      //Add Class Active
+      $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+      //show the next fieldset
+      next_fs.show();
+      //hide the current fieldset with style
+      current_fs.animate({ opacity: 0 }, {
+        step: function (now) {
+          // for making fielset appear animation
+          opacity = 1 - now;
+          current_fs.css({
+            'display': 'none',
+            'position': 'relative'
+          });
+          next_fs.css({ 'opacity': opacity });
+        },
+        duration: 500
+      });
+      setProgressBar(++current);
+    });
+
+    $(".previous").click(function () {
+
+      current_fs = $(this).parent();
+      previous_fs = $(this).parent().prev();
+
+      //Remove class active
+      $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+      //show the previous fieldset
+      previous_fs.show();
+
+      //hide the current fieldset with style
+      current_fs.animate({ opacity: 0 }, {
+        step: function (now) {
+          // for making fielset appear animation
+          opacity = 1 - now;
+
+          current_fs.css({
+            'display': 'none',
+            'position': 'relative'
+          });
+          previous_fs.css({ 'opacity': opacity });
+        },
+        duration: 500
+      });
+      setProgressBar(--current);
+    });
+
+    function setProgressBar(curStep) {
+      var percent = parseFloat(100 / steps) * curStep;
+      percent = percent.toFixed();
+      $(".progress-bar")
+        .css("width", percent + "%")
+    }
+
+    $(".submit").click(function () {
+      return false;
+    })
+
+  });
+
+  $(document).ready(function () {
+    $('input[type="radio"]').click(function () {
+      // alert($(this).attr('id'));
+      if ($(this).attr('id') == 'indian') {
+        $('.display-check-ind').fadeIn();
+        $('.display-check-nri').fadeOut();
+      }
+      else if ($(this).attr('id') == 'nri') {
+        $('.display-check-nri').fadeIn();
+        $('.display-check-ind').fadeOut();
+      }
+      else if ($(this).attr('id') == 'holderIndian_1') {
+        $('.display-check-holderInd-1').fadeIn();
+        $('.display-check-holderNri-1').fadeOut();
+      }
+      else if ($(this).attr('id') == 'holderNri_1') {
+        $('.display-check-holderNri-1').fadeIn();
+        $('.display-check-holderInd-1').fadeOut();
+      }
+      else if ($(this).attr('id') == 'holderIndian_2') {
+        $('.display-check-holderInd-2').fadeIn();
+        $('.display-check-holderNri-2').fadeOut();
+      }
+      else if ($(this).attr('id') == 'holderNri_2') {
+        $('.display-check-holderNri-2').fadeIn();
+        $('.display-check-holderInd-2').fadeOut();
+      }
+      else {
+        $('.display-check-ind').fadeOut();
+        $('.display-check-nri').fadeOut();
+        $('.display-check-holderInd-1').fadeOut();
+        $('.display-check-holderNri-1').fadeOut();
+        $('.display-check-holderInd-2').fadeOut();
+        $('.display-check-holderNri-2').fadeOut();
+      }
+
+    });
+  });
+
+  // Proof of address display
+  $(document).ready(function () {
+    $('input[type="radio"]').click(function () {
+      if ($(this).attr('id') == 'dl') {
+        $('.display-on-check1').fadeIn();
+      }
+      else if ($(this).attr('id') == 'passport') {
+        $('.display-on-check1').fadeIn();
+      }
+
+      else {
+        $('.display-on-check1').fadeOut();
+      }
+    });
+  });
+
+</script>
+
+<script>
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#imageResult')
+          .attr('src', e.target.result);
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  $(function () {
+    $('#upload').on('change', function () {
+      readURL(input);
+    });
+  });
+
+  /*  ==========================================
+      SHOW UPLOADED IMAGE NAME
+  * ========================================== */
+  var input = document.getElementById('upload');
+  var infoArea = document.getElementById('upload-label');
+
+  //input.addEventListener( 'change', showFileName );
+  function showFileName(event) {
+    var input = event.srcElement;
+    var fileName = input.files[0].name;
+    infoArea.textContent = 'File name: ' + fileName;
+  }
+
+
+  $(document).ready(function () {
+    var mySelect = $('#years');
+    var startYear = new Date().getFullYear() + 1;
+    //var prevYear = 2019;
+    for (var i = 0; i < 30; i++) {
+      startYear = startYear - 1;
+      prevYear = startYear - 1;
+      mySelect.append(
+        $('<option></option>').val(prevYear + "-" + startYear).html(prevYear + "-" + startYear)
+      );
+    }
+    $('#perpetual').click(function () {
+      var checkBox = document.getElementById("perpetual").checked;
+      // alert(checkBox)
+      $("#month_to").val("");
+      if (checkBox == false) {
+        $("#perpetual_val").val("N");
+        $("#perpetual").val("N");
+        $("#end_date").css({ "display": "block" });
+      } if (checkBox == true) {
+        $("#perpetual_val").val("Y");
+        $("#perpetual").val("Y")
+        //$("#month_to").val("2099-12");
+        $("#end_date").css({ "display": "none" });
+      }
+    });
+
+    $('#defaultCheck1').click(function () {
+      var checkBox = document.getElementById("defaultCheck1").checked;
+      if (checkBox == false) {
+        $("#end_date").css({ "display": "block" });
+      } else {
+        $("#to_date").val("");
+        $("#end_date").css({ "display": "none" });
+      }
+    });
+
+  });
+</script>
+
+<script>
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var image = $("input[name=image]").val()
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        if ((image.split('.').pop() == "pdf") || (image.split('.').pop() == "jpg") || (image.split('.').pop() == "jpeg") || (image.split('.').pop() == "png")) {
+          if (image.split('.').pop() == "pdf") {
+            $("#pdf").css('display', 'block')
+            $("#img").css('display', 'none')
+            $('#previewHolderpdf').attr('src', e.target.result);
+            $('#modalpreviewHolderpdf').attr('src', e.target.result);
+          } else {
+            $("#img").css('display', 'block')
+            $("#pdf").css('display', 'none')
+            $('#previewHolder').attr('src', e.target.result);
+            $('#modalpreviewHolder').attr('src', e.target.result);
+          }
+        } else {
+          alert('Invalid File Formate!');
+        }
+
+      }
+      reader.readAsDataURL(input.files[0]);
+    } else {
+      alert('select a file to see preview');
+      $("#img").css('display', 'none')
+      $("#pdf").css('display', 'none')
+      $('#previewHolder').attr('src', '');
+    }
+  }
+
+  $("#filePhoto").change(function () {
+
+    readURL(this);
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    var dtToday = new Date();
+
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if (month < 10)
+      month = '0' + month.toString();
+    if (day < 10)
+      day = '0' + day.toString();
+
+    var minDate = year + '-' + month;
+    var maxDate = '2099-12';
+    //alert(maxDate);
+    $('#month_from').attr('min', minDate);
+    $('#month_to').attr('min', minDate);
+    $('#month_from').attr('max', maxDate);
+    $('#month_to').attr('max', maxDate);
+  });
+
+
+
+  $(document).on('click', '.toggle-password', function () {
+
+    $(this).toggleClass("fa-eye fa-eye-slash");
+
+    var input = $("#new_pass");
+    input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password')
+  });
+
+  var userName = document.querySelector('#amt');
+  userName.addEventListener('input', restrictNumber);
+
+  var userName = document.querySelector('#numberField');
+  userName.addEventListener('input', restrictNumber);
+
+  var userName = document.querySelector('#cnf-acc-num');
+  userName.addEventListener('input', restrictNumber);
+
+  var userName = document.querySelector('#n_perc');
+  userName.addEventListener('input', restrictNumber);
+
+  var userName = document.querySelector('#holder_phon_1');
+  userName.addEventListener('input', restrictNumber);
+
+  var userName = document.querySelector('#holder_phon_2');
+  userName.addEventListener('input', restrictNumber);
+
+  var userName = document.querySelector('#acc-num');
+  userName.addEventListener('input', restrictNumber);
+
+
+
+  function restrictNumber(e) {
+    var newValue = this.value.replace(new RegExp(/[^\d]/, 'ig'), "");
+    this.value = newValue;
+  }
+
+
+  var mobileNo = document.querySelector('#mobileNo');
+  mobileNo.addEventListener('input', restrictmobileNo);
+  function restrictmobileNo(e) {
+    var newValue = this.value.replace(new RegExp(/[^\d]/, 'ig'), "");
+    this.value = newValue;
+  }
+
+</script>
+<script>
+  const regex = /^[a-zA-Z\s]*$/;
+  function validate(e) {
+    const chars = e.target.value.split('');
+    const char = chars.pop();
+    if (!regex.test(char)) {
+      e.target.value = chars.join('');
+      console.log(`${char} is not a valid character.`);
+    }
+  }
+  document.querySelector('#regfullname').addEventListener('input', validate);
+</script>
+<script>
+  $(document).ready(function () {
+    $("#form-dialog-stp,#form-dialog-sip,#form-dialog-switch,#form-dialog-redemption,#form-dialog-swp,#form-dialog-additional-purchase,#form-dialog-new-purchase").modal({
+      show: false,
+      backdrop: 'static'
+    });
+  });
+
+
+</script>
+
+
+</html>

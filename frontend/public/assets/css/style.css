@@ -1,0 +1,554 @@
+/*------------------------------------------------------------------
+[Main Stylesheet]
+
+Project:    Prodigy
+Version:    1.1.0
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+   
+    *. Login Layout 12 / .login-23
+    *. Login Layout 12 / .login-23
+    *. Login inner form / .login-inner-form
+    *. Login inner form details / .details
+-------------------------------------------------------------------*/
+/** GLOBAL CLASSES **/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #535353;
+}
+
+.img-fluid {
+    max-width: 100% !important;
+    height: auto;
+}
+/* 
+.loader_img{
+    width: 100%;
+}
+
+.fadeOut{
+     opacity:0;
+     width:0;
+     height:0;
+     transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+
+}
+
+.fadeIn{
+     opacity:1;
+     width:100px;
+     height:100px;
+     transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
+
+} */
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.form-control::-webkit-input-placeholder {
+	color: lightgray !important;
+	opacity: 1
+}
+
+.form-control::-moz-placeholder {
+	color: lightgray !important;
+	opacity: 1
+}
+
+.form-control:-ms-input-placeholder {
+	color: lightgray !important;
+	opacity: 1
+}
+
+.form-control::-ms-input-placeholder {
+	color: lightgray !important;
+	opacity: 1
+}
+
+.form-control::placeholder {
+	color: lightgray !important;
+	opacity: 1
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* themeing */
+.bg-theme{
+    background-color:#e06567;
+}
+.bg-theme-light{
+    background-color:#ff8e4e54;
+}
+
+/* para-text */
+.para{
+    font-size:14px;
+}
+/** Login 23 start **/
+.login-23{
+    top: 0;
+    width: 100%;
+    bottom: 0;
+    min-height: 100vh;
+    z-index: 999;
+    opacity: 1;
+    position: relative;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    /* background: #151a22; */
+    background-image: url(../img/bg-image-full.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.login-23 .login-inner-form {
+    color: #272323;
+    text-align: center;
+}
+
+.login-23 .col-pad-0{
+    padding: 0;
+}
+
+.login-23 .login-inner-form .details p{
+    color: #403838;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.login-23 .login-inner-form .details p a{
+    margin-left: 3px;
+    color: #403838;
+}
+
+.login-23 .login-inner-form .details p{
+    margin-bottom: 0;
+}
+
+.login-23 .login-inner-form .details {
+    padding:30px 0 30px 60px;
+}
+
+.login-23 .bg-img {
+    background-size: cover;
+    width: 100%;
+    bottom: 0;
+    border-radius: 10px;
+    padding: 80px 20px;
+    background: #ff574d;
+    margin: 30px 0;
+    right: -60px;
+    z-index: 999;
+}
+
+.login-box-12 {
+    margin: 0 200px 0 150px;
+    max-width: 700px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.04) url(../img/bg-image.jpg) top left repeat;
+    background-size: cover;
+    top: 0;
+    bottom: 0;
+    opacity: 1;
+    text-align: center;
+}
+
+.login-23 .btn-outline {
+    border-radius: 3px;
+    padding: 6px 30px 6px 30px;
+    color: #ff574d;
+    background: #fff;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.login-23 .none-2{
+    display: none;
+}
+
+.login-23 .btn-outline:hover{
+    background: #ecebeb;
+    text-decoration: none;
+}
+
+.login-23 .login-inner-form h3 {
+    margin: 0 0 25px;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    color: #272323;
+}
+
+.login-23 .login-inner-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-23 .login-inner-form .input-text {
+    outline: none;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 15px;
+    outline: 0;
+    font-weight: 500;
+    color: #717171;
+    height: 45px;
+    border-radius: 3px;
+    border: 1px solid #dbdbdb;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .06);
+}
+
+.login-23 .login-inner-form .btn-md {
+    cursor: pointer;
+    padding: 10px 50px 8px 50px;
+    height: 45px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 3px;
+}
+
+.login-23 .bg-img .social-list li {
+    display: inline-block;
+    font-size: 16px;
+}
+
+.login-23 .bg-img .logo{
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.login-23 .bg-img p{
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.login-23 .bg-img .btn-sm{
+    padding: 6px 20px 6px 20px;
+    font-size: 13px;
+}
+
+.login-23 .bg-img .social-list{
+    margin-top: 10px;
+    padding: 0;
+}
+
+.login-23 .bg-img .social-list li a {
+    margin: 0 5px;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.login-23 .bg-img .social-list li a:hover{
+    color: #ecebeb;
+}
+
+.login-23 .login-inner-form input[type=checkbox], input[type=radio] {
+    margin-right: 3px;
+}
+
+.login-23 .login-inner-form button:focus {
+    outline: none;
+    outline: 0 auto -webkit-focus-ring-color;
+}
+
+.login-23 .login-inner-form .btn-theme.focus, .btn-theme:focus {
+    box-shadow: none;
+}
+
+.login-23 .login-inner-form .btn-theme {
+    background: #ff574d;
+    border: none;
+    color: #fff;
+    text-decoration: none;
+}
+
+.login-23 .login-inner-form .btn-theme:hover {
+    background: #ec4a40;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+}
+
+.login-23 .login-inner-form .terms{
+    margin-left: 3px;
+}
+
+.login-23 .login-inner-form .checkbox {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.login-23 .login-inner-form .form-check{
+    float: left;
+    margin-bottom: 0;
+}
+
+.login-23 .login-inner-form .form-check a {
+    color: #717171;
+    float: right;
+}
+
+.login-23 .login-inner-form .form-check-input {
+    position: absolute;
+    margin-left: 0;
+}
+
+.login-23 .login-inner-form .form-check label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    margin-left: -25px;
+    border: 1px solid #c5c3c3;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.login-23 .login-inner-form .form-check-label {
+    padding-left: 25px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #403838;
+}
+
+.login-23 .login-inner-form .checkbox-theme input[type="checkbox"]:checked + label::before {
+    background-color: #ff574d;
+    border-color: #ff574d;
+}
+
+.login-23 .login-inner-form input[type=checkbox]:checked + label:before {
+    font-weight: 300;
+    color: #f3f3f3;
+    line-height: 15px;
+    font-size: 14px;
+    content: "\2713";
+}
+
+.login-23 .login-inner-form input[type=checkbox], input[type=radio] {
+    margin-top: 4px;
+}
+
+.login-23 .login-inner-form .checkbox a {
+    font-size: 13px;
+    color: #403838;
+    float: right;
+}
+.form-check {
+padding-left: 0 !important;
+}
+
+/** MEDIA **/
+@media (max-width: 992px) {
+    .login-23 .none-992{
+        display: none;
+    }
+
+    .login-23 .pad-0{
+        padding: 0;
+    }
+
+    .login-23 .login-box-12 {
+        margin: 0 auto;
+        max-width: 400px;
+    }
+
+    .login-23 .login-inner-form .details {
+        padding: 30px;
+    }
+}
+.fa-facebook{
+    background-color: #4267B2;
+    padding: 9px 0px;
+    color: white;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+.fa-google{
+    background-color: #c4302b;
+    padding: 7px 0px;
+    color: white;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+.fa-apple{
+    background-color: #f5f6fd;
+    padding: 7px 0px;
+    color: #000;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+/** Login 23 end **/
+
+/* theme Buttons */
+
+.btn-theme-1 {
+    background-color: #ff574d;
+  }
+  .btn-theme-1 .round {
+    background-color: #e62c2c;
+  }
+  
+  .btn-theme-2 {
+    background-color: #00AFD1;
+  }
+  .btn-theme-2 .round {
+    background-color: #00c4eb;
+  }
+  
+  .btn-theme-3 {
+    background-color: #5A5B5E;
+  }
+  .btn-theme-3 .round {
+    background-color: #737478;
+  }
+  
+  .btn-theme-effect {
+    text-decoration: none !important;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    padding: 9px 53px 9px 23px;
+    color: #fff !important;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+    position: relative;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .btn-theme-effect span {
+    position: relative;
+    z-index: 3;
+  }
+  .btn-theme-effect .round {
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 38px;
+    height: 36px;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    z-index: 2;
+  }
+  .btn-theme-effect .round i {
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;
+    left: 50%;
+    margin-left: -4px;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  .button-text {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  
+  .btn-theme-effect:hover {
+    padding-left: 48px;
+    padding-right: 28px;
+  }
+  .btn-theme-effect:hover .round {
+    width: calc(100% - 6px);
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+  }
+  .btn-theme-effect:hover .round i {
+    left: 12%;
+  }
+
+/* theme Buttons end*/
+
+ /* Top header logo for login/signup module */
+.logo-container{
+    left: 50%;
+    position: absolute;
+    top: -55px;
+   
+   }
+   @media only screen and (max-width: 768px) {
+  
+     .logo-container{
+        position: relative;
+      text-align: center !important;
+      top: auto !important;
+      left: 0%;
+     }
+    }
+     /* Top header logo for login/signup module */
+     /* Loader */
+     #overlay {
+        background: #ffffff;
+        color: #666666;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        z-index: 5000;
+        top: 0;
+        left: 0;
+        float: left;
+        text-align: center;
+        padding-top: 25%;
+        opacity: .80;
+      }
+      button {
+        margin: 40px;
+        padding: 5px 20px;
+        cursor: pointer;
+      }
+      .spinner {
+          margin: 0 auto;
+          height: 64px;
+          width: 64px;
+          animation: rotate 0.8s infinite linear;
+          border: 5px solid firebrick;
+          border-right-color: transparent;
+          border-radius: 50%;
+      }
+      @keyframes rotate {
+          0% {
+              transform: rotate(0deg);
+          }
+          100% {
+              transform: rotate(360deg);
+          }
+      }
+      /* Loader End */
+
+      a:hover
+      {
+        text-decoration: none;
+      }
