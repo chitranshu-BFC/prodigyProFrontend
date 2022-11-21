@@ -8,7 +8,8 @@ class UserProvider extends Component {
         snapshot: [],
         portfolioData: [],
         taxPlanningLumpSum: [],
-        userProfile: []
+        userProfile: [],
+        amcListTransactPage: []
     }
 
     // Methods to update state
@@ -28,10 +29,16 @@ class UserProvider extends Component {
         this.setState({ userProfile: [...userProfileData] })
     }
 
+    setAmcListTransactPage = (amcListTransactPage) => {
+        this.setState({ amcListTransactPage: [...amcListTransactPage] })
+    }
+
     render() {
         const { children } = this.props
-        const { snapshot, portfolioData, taxPlanningLumpSum, userProfile } = this.state
-        const { setSnapshot, setPortfolioData, setTaxPlanningLumpSum, setUserProfile } = this
+        const { snapshot, portfolioData, taxPlanningLumpSum, userProfile, amcListTransactPage } = this.state
+        const { setSnapshot, setPortfolioData, setTaxPlanningLumpSum, setUserProfile, setAmcListTransactPage } = this
+
+        console.log("userProfile ", userProfile)
 
         return (
             <UserContext.Provider
@@ -39,11 +46,13 @@ class UserProvider extends Component {
                     snapshot,
                     userProfile,
                     portfolioData,
+                    amcListTransactPage,
                     setSnapshot,
                     setPortfolioData,
                     taxPlanningLumpSum,
                     setTaxPlanningLumpSum,
-                    setUserProfile
+                    setUserProfile,
+                    setAmcListTransactPage
                 }}
             >
                 {children}
